@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Montserrat:wght@700&family=Orbitron:wght@700&display=swap" rel="stylesheet">   
+    <link rel='stylesheet' type='text/css' href="CSS/controle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Senha</title>
+    <script>
+        $(document).ready(function(){
+           
+            //Atualiza o controle com a última senha do dia anterior
+            var senha =  document.getElementById("senha").value
+            console.log(senha)
+            data={cod:""}
+            $.ajax({
+                url:'PHP/valida.php',
+                data:data,
+                type:"POST",
+               success : function(senha){
+                   
+                   console.log(senha)
+                   
+                   var senha_atual=  document.getElementById("senha")
+                   if(senha_atual==senha){
+                        console.log("é igual")
+                   }else{
+                        senha_atual.value=senha;
+                   }
+                }
+            });
+        })
+
+        function avancar(){
+            var senha = document.getElementById('senha').value
+            senha=parseInt(senha)
+            console.log(senha)
+
+            senha=senha+1
+            document.getElementById('senha').value=senha
+
+            
+            $.ajax({
+                url:'PHP/valida.php',
+                data:{codigo:senha},
+                type:"POST",
+               success : function(senha){
+                    console.log(senha)
+               }
+            });
+        }
+
+        function retroceder(){
+            var senha = document.getElementById('senha').value
+            senha=parseInt(senha)
+            console.log(senha)
+            if(senha==1){
+
+            }else{
+                 senha=senha-1
+                 document.getElementById('senha').value=senha
+                 
+            $.ajax({
+                url:'valida.php',
+                data:{codigo:senha},
+                type:"POST",
+               success : function(senha){
+                    console.log(senha)
+               }
+            });
+            }
+           
+
+            
+        }
+    </script>
+</head>
+<body>
+    <div class='container'>
+        
+        <div class='logo'>
+           <img src='Img/logo.png'>
+            
+        </div><!--logo-->
+        <div class='div-senha'>
+            
+            <span>SENHA ATUAL:</span>
+            <div class='senha'>
+               <input id='senha'  onchange="verifica(this.value)" min=1 value=''type='number'>
+            </div>
+            
+        </div><!--div-senha-->     
+        <div class='botoes'>
+            <button onclick="retroceder()">RETROCEDER</button>
+             <button onclick="avancar()">AVANÇAR</button>
+
+        </div> 
+       
+    </div>
+</body>
+</html>

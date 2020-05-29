@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Montserrat:wght@700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href="CSS/senha.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">  
+    <script type="text/javascript" src="http://vozme.com/get_text.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=1JYTkAEU"></script>
+
+
+    <title>Senha</title>
+    <script>
+       
+        
+        setInterval(function(){
+            
+            var nova_senha =  document.getElementsByClassName("senha")[0];
+            
+            var senha_atual=  document.getElementById("campo_senha").innerText
+            
+            data={cod:""}
+            $.ajax({
+                url:'PHP/valida.php',
+                data:data,
+                type:"POST",
+               success : function(senha){
+                   
+                   var audio=document.getElementById('audio')
+                   var senha_atual=  document.getElementById("campo_senha").innerText
+                   if(senha_atual==senha){
+                        console.log("é igual")
+                   }else{
+                    audio.volume = 1; 
+                       audio.play()
+                       nova_senha.innerHTML=senha;
+                       setTimeout(function(){
+                            responsiveVoice.speak(senha, "Brazilian Portuguese Female",{volume: 50},{rate: 0.5});
+                       },3500)
+                           
+                  
+                       
+                   }
+                   
+                   
+               }
+            });
+        }, 500);
+    </script>
+</head>
+<body>
+    <div class='container'>
+        
+        <div class='logo'>
+           <img src='Img/logo.png'>
+           <span>SENHA ATUAL:</span>
+        </div><!--logo-->
+       
+        <div class='div-senha'>
+            <audio id="audio">
+                <source src="Sounds/campainha.mp3" type="audio/mp3">
+               
+            </audio>
+            <audio src='' id='fala' hidden class='speech'></audio>
+            
+            <div id='campo_senha' class='senha'>1</div>
+            <!-- <div class='decreto'>
+                <img src="Img/prefeitura_logo.png">
+                <ul>
+                    <li style='font-weight: bold;'>ESTADO DO PARANÁ</li>
+                    <li style='font-weight: bold;'>PREFEITURA MUNICIPAL DE UNIÃO DA VITÓRIA</li>
+                    <li>Rua Dr. CruzMachado,205 - 3º e 4º Pavimentos</li>
+                    <li>Fone:(42)3521-1200 email:pmuva@uniaodavitoria.pr.gov.br</li>
+                    <li>CPNF 75.967.760-0001-71</li>
+                    <li style='font-weight: bold;'>Site Oficial:www.uniaodavitoria.pr.gov.br</li>
+                </ul>
+                <p>DECRETO Nº 150/2020</p>
+                <P>Altera o dispositivo do Decreto 104/2020, que
+                   dispoõe sobre a adoção, no âmbito da
+                   Administração Pública direta e indireta, de 
+                   medidas temporárias e emergencias de 
+                   prevenção de contágio pelo COVID-19 (Novo
+                   Coronavirus).</P>
+                <p>     <b >Art 4º</b> Aos proprietários de supermercados, minimercados e 
+                    estabelecimentos congêneres, fica <u><b>determinada</b></u> a adoção de critérios objetivos, dentro das
+                    características e possibilidades de cada estabelecimento, no sentido de se evitar
+                    aglomerações, bem como adotem medidas efetias de proteção de seus colaboradores
+                    (seja via uitilização de máscadas, aferições de temperatura corporal,cuidados com 
+                    higienização,etc)
+                </p>
+                <p>§ 1º Fica <b>LIMITADA</b> a entrada nos recintos descritos acima, de <b>04 (quatro)
+                    pessoas</b> por guichê (caixa) existente,sendo <b>OBRIGATORIAMENTE</b>,<u> somete 01 (uma)
+                        pessoa por família.
+                    </u>
+                </p>
+                
+            </div> -->
+        </div><!--div-senha-->      
+        
+        <div class='faixa'>
+            <ul>
+                <li>CORONAVIRUS</li>
+                <li>COVID-19</li>
+                <li>2019-NCOV</li>
+
+            </ul>
+        </div><!--faixa-->
+        
+      
+        <img class='cuidados-ilustracao'src='Img/precaucao.png'>
+     
+
+
+    </div>
+</body>
+</html>

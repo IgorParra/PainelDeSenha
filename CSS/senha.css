@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+    
+}
+
+body{
+    overflow: hidden;
+}
+.container{
+    background-image: url('../Img/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.faixa{
+    width: 100%;
+    height: 8%;
+    background-color: #ff1e00;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.7%;
+    
+    
+   
+}
+.logo {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    position: absolute;
+}
+
+.logo img{
+    padding-top: 5%;
+    width: 15%;
+    
+
+}
+
+
+
+.div-senha{
+    width: 100%;
+    height: 55%;
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 9%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;    font-weight: bold;
+    color: #ff1e00;
+    
+}
+.logo span{
+    font-family: 'Montserrat', sans-serif;
+    color: #006ddc;
+    font-size: 20%;
+    font-size: 180%;
+    
+    width: 50%;
+    margin-bottom:5% ;
+    text-align: center;
+    
+    
+    
+}
+
+.precaucao-escrita ul{
+    font-family: 'Montserrat', sans-serif;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+    color:#ff1e00;
+    
+}
+.precaucao-escrita ul li:not(:first-child){
+    margin-left: 5%;
+}
+.precaucoes-ilustracao{
+    
+    width: 100%;
+    height: 18%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.precaucoes-ilustracao img{
+    width: 40%;
+   
+}
+.senha{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    font-size:3500%;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 6%;
+   
+    float: left;
+    
+    
+  
+}
+
+
+
+.decreto{
+    color: black;
+    width: 50%;
+    height: 100%;
+    font-size:180%;
+    margin-top: 0.5%;
+    float: left!important;
+    margin-left: 5%;
+}
+
+.decreto ul{
+    list-style: none;
+    font-size: 40%;
+    font-weight: lighter;
+
+}
+
+
+
+
+
+
+.decreto span{
+    color:red;
+}
+.faixa ul li{
+    margin-right: 10%;
+    
+}
+
+.decreto p:nth-child(4){
+    font-size: 50%;
+    text-align: justify;
+    width: 50%;
+    margin-left: 40%;
+}
+
+.decreto p:nth-child(3){
+    font-size: 50%;
+    text-align: justify;
+    width: 80%;
+    margin-left: 40%;
+    font-weight: bolder;
+    
+    margin-bottom: 1%;
+  
+}
+
+.decreto p:nth-child(5){
+    font-size: 50%;
+    text-align: justify;
+    width: 90%;
+    margin-top: 2%;
+    font-weight: lighter;
+    margin-bottom: 1%;
+  
+}
+.decreto p b{
+    color: red;
+  
+}
+.decreto p u{
+    color: red;
+}
+.decreto img{
+    width: 10%;
+    float: left;
+    margin-right: 2%;
+}
+.decreto p:nth-child(6){
+    font-size: 50%;
+    text-align: justify;
+    width: 90%;
+    margin-top: 2%;
+    font-weight: lighter;
+    margin-bottom: 1%;
+  
+}
+
+.faixa li:first-of-type{
+    list-style: none;
+   
+}
+
+.faixa ul{
+    list-style: none;
+    color: white;
+    font-size: 200%;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    margin-left: 5%;
+    
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+
+.div-lista-precaucao{
+   
+    
+    width: 100%;
+    font-size: 70%;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color:#ff1e00
+
+}
+.cuidados-ilustracao{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 0.7%;
+    
+}
+
+
+
+
